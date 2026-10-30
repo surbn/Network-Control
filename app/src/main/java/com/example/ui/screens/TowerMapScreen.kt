@@ -40,9 +40,8 @@ import kotlin.math.*
 
 @Composable
 fun TowerMapScreen(
-    cellular: CellularTelemetry,
-    towers: List<CellTowerInfo>,
-    onRefreshTowers: () -> Unit,
+    towers: List<CellTowerInfo> = emptyList(),
+    onRefreshTowers: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current

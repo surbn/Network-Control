@@ -16,14 +16,14 @@ enum class ToolsSubTab(val title: String) {
 
 @Composable
 fun ToolsSettingsScreen(
-    diagnostic: DiagnosticReport,
-    hapticEnabled: Boolean,
-    statusBarIconEnabled: Boolean,
-    selectedStatusBarIcon: StatusBarIconType,
-    onRefreshDiagnostics: () -> Unit,
-    onToggleHaptic: (Boolean) -> Unit,
-    onToggleStatusBarIcon: (Boolean) -> Unit,
-    onSelectStatusBarIcon: (StatusBarIconType) -> Unit,
+    diagnostic: DiagnosticReport = DiagnosticReport(),
+    hapticEnabled: Boolean = true,
+    statusBarIconEnabled: Boolean = true,
+    selectedStatusBarIcon: StatusBarIconType = StatusBarIconType.FIVE_G,
+    onRefreshDiagnostics: () -> Unit = {},
+    onToggleHaptic: (Boolean) -> Unit = {},
+    onToggleStatusBarIcon: (Boolean) -> Unit = {},
+    onSelectStatusBarIcon: (StatusBarIconType) -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     var currentSubTab by remember { mutableStateOf(ToolsSubTab.TOOLS) }

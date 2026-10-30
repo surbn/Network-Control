@@ -48,8 +48,7 @@
         <!-- Foreground Service for Custom Status Bar Icon -->
         <service
             android:name=".service.StatusBarIconService"
-            android:exported="false"
-            android:foregroundServiceType="connectedDevice" />
+            android:exported="false" />
 
         <!-- Accessibility Service for Automatic 1-Click Radio Info Switch -->
         <service

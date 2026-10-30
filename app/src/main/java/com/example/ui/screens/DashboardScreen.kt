@@ -41,20 +41,20 @@ import com.example.ui.theme.*
 
 @Composable
 fun DashboardScreen(
-    cellular: CellularTelemetry,
-    ping: PingMetrics,
-    diagnostic: DiagnosticReport,
-    selectedMode: NetworkMode,
-    isApplying: Boolean,
-    applyResult: String,
-    statusBarIconEnabled: Boolean,
-    selectedStatusBarIcon: StatusBarIconType,
-    onSelectMode: (NetworkMode) -> Unit,
-    onApplyModeOneClick: () -> Unit,
-    onApplyMode: () -> Unit,
-    onToggleStatusBarIcon: (Boolean) -> Unit,
-    onSelectStatusBarIcon: (StatusBarIconType) -> Unit,
-    onRefreshTelemetry: () -> Unit,
+    cellular: CellularTelemetry = CellularTelemetry(),
+    ping: PingMetrics = PingMetrics(),
+    diagnostic: DiagnosticReport = DiagnosticReport(),
+    selectedMode: NetworkMode = NetworkMode.AUTO,
+    isApplying: Boolean = false,
+    applyResult: String = "",
+    statusBarIconEnabled: Boolean = true,
+    selectedStatusBarIcon: StatusBarIconType = StatusBarIconType.FIVE_G,
+    onSelectMode: (NetworkMode) -> Unit = {},
+    onApplyModeOneClick: () -> Unit = {},
+    onApplyMode: () -> Unit = {},
+    onToggleStatusBarIcon: (Boolean) -> Unit = {},
+    onSelectStatusBarIcon: (StatusBarIconType) -> Unit = {},
+    onRefreshTelemetry: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current

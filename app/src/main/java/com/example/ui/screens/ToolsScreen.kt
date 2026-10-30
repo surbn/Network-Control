@@ -38,8 +38,8 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun ToolsScreen(
-    diagnostic: DiagnosticReport,
-    onRefreshDiagnostics: () -> Unit,
+    diagnostic: DiagnosticReport = DiagnosticReport(),
+    onRefreshDiagnostics: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current

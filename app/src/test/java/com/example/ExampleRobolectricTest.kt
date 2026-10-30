@@ -3,13 +3,14 @@ package com.example
 import android.content.Context
 import androidx.test.core.app.ApplicationProvider
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotNull
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [36])
+@Config(sdk = [34])
 class ExampleRobolectricTest {
 
   @Test
@@ -17,5 +18,14 @@ class ExampleRobolectricTest {
     val context = ApplicationProvider.getApplicationContext<Context>()
     val appName = context.getString(R.string.app_name)
     assertEquals("5G Switch Pro", appName)
+  }
+
+  @Test
+  fun `verify network telemetry manager initialization`() {
+    val context = ApplicationProvider.getApplicationContext<Context>()
+    val manager = com.example.service.NetworkTelemetryManager(context)
+    assertNotNull(manager)
+    assertNotNull(manager.cellularState.value)
+    assertNotNull(manager.wifiState.value)
   }
 }

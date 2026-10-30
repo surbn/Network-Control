@@ -39,12 +39,12 @@ import com.example.ui.theme.*
 
 @Composable
 fun SettingsScreen(
-    hapticEnabled: Boolean,
-    statusBarIconEnabled: Boolean,
-    selectedStatusBarIcon: StatusBarIconType,
-    onToggleHaptic: (Boolean) -> Unit,
-    onToggleStatusBarIcon: (Boolean) -> Unit,
-    onSelectStatusBarIcon: (StatusBarIconType) -> Unit,
+    hapticEnabled: Boolean = true,
+    statusBarIconEnabled: Boolean = true,
+    selectedStatusBarIcon: StatusBarIconType = StatusBarIconType.FIVE_G,
+    onToggleHaptic: (Boolean) -> Unit = {},
+    onToggleStatusBarIcon: (Boolean) -> Unit = {},
+    onSelectStatusBarIcon: (StatusBarIconType) -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current

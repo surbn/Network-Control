@@ -52,18 +52,18 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainAppScreen(viewModel: MainViewModel = viewModel()) {
     val context = LocalContext.current
-    val currentTab by viewModel.currentTab.collectAsStateWithLifecycle()
-    val cellular by viewModel.cellularState.collectAsStateWithLifecycle()
-    val wifi by viewModel.wifiState.collectAsStateWithLifecycle()
-    val ping by viewModel.pingState.collectAsStateWithLifecycle()
-    val cellTowers by viewModel.cellTowers.collectAsStateWithLifecycle()
-    val diagnostic by viewModel.diagnosticState.collectAsStateWithLifecycle()
-    val selectedMode by viewModel.selectedMode.collectAsStateWithLifecycle()
-    val isApplying by viewModel.isApplying.collectAsStateWithLifecycle()
-    val applyResult by viewModel.applyResult.collectAsStateWithLifecycle()
-    val hapticEnabled by viewModel.hapticEnabled.collectAsStateWithLifecycle()
-    val statusBarIconEnabled by viewModel.statusBarIconEnabled.collectAsStateWithLifecycle()
-    val selectedStatusBarIcon by viewModel.selectedStatusBarIcon.collectAsStateWithLifecycle()
+    val currentTab by viewModel.currentTab.collectAsState()
+    val cellular by viewModel.cellularState.collectAsState()
+    val wifi by viewModel.wifiState.collectAsState()
+    val ping by viewModel.pingState.collectAsState()
+    val cellTowers by viewModel.cellTowers.collectAsState()
+    val diagnostic by viewModel.diagnosticState.collectAsState()
+    val selectedMode by viewModel.selectedMode.collectAsState()
+    val isApplying by viewModel.isApplying.collectAsState()
+    val applyResult by viewModel.applyResult.collectAsState()
+    val hapticEnabled by viewModel.hapticEnabled.collectAsState()
+    val statusBarIconEnabled by viewModel.statusBarIconEnabled.collectAsState()
+    val selectedStatusBarIcon by viewModel.selectedStatusBarIcon.collectAsState()
 
     // Request notification and location permissions for status bar & tower GPS accuracy
     val permissionLauncher = rememberLauncherForActivityResult(
@@ -126,7 +126,6 @@ fun MainAppScreen(viewModel: MainViewModel = viewModel()) {
                     )
 
                     AppTab.MAP -> TowerMapScreen(
-                        cellular = cellular,
                         towers = cellTowers,
                         onRefreshTowers = { viewModel.refreshAll() }
                     )

@@ -30,8 +30,8 @@ import com.example.ui.theme.*
 
 @Composable
 fun TelemetryScreen(
-    cellular: CellularTelemetry,
-    wifi: WifiTelemetry,
+    cellular: CellularTelemetry = CellularTelemetry(),
+    wifi: WifiTelemetry = WifiTelemetry(),
     modifier: Modifier = Modifier
 ) {
     Column(

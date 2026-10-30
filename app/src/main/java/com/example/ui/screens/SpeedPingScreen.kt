@@ -39,9 +39,9 @@ import com.example.ui.theme.*
 
 @Composable
 fun SpeedPingScreen(
-    ping: PingMetrics,
-    onStartPing: (String, String) -> Unit,
-    onStopPing: () -> Unit,
+    ping: PingMetrics = PingMetrics(),
+    onStartPing: (String, String) -> Unit = { _, _ -> },
+    onStopPing: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
