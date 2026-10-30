@@ -1,0 +1,6 @@
+{
+  "name": "5G Switch Pro",
+  "description": "An ultra-premium iOS styled 5G/4G network mode switcher, telemetry dashboard, speed and latency diagnostics with Shizuku and root controls.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

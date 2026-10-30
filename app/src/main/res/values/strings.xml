@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">5G Switch Pro</string>
+    <string name="accessibility_service_description">Automates 1-click network mode switching in Radio Info (*#*#4636#*#*) by automatically choosing NR only, LTE only, or Auto without manual scrolling.</string>
+</resources>
